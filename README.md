@@ -1,6 +1,8 @@
 # Tooltip.js
 A JavaScript library for creating dynamic tooltips with custom styles
 
+you can see a basic example [here](https://leotomasmc.github.io/Tooltip.js/example.html)
+
 ## How to use
 First, add the script tag to add the library.
 ```html
@@ -16,11 +18,13 @@ Then add a basic style to your stylesheet or style tag
 }
 ```
 You can change it however you would like, but this is just an example.
+
 To add tooltips to an element, add a `data-tt` attribute to the element you want to have the tooltip with the string you want displayed.
 ```html
 <p data-tt="span tooltip!">this text has a tooltip</p>
 ```
 If you want an element to inherit its parent's tooltip, set the string in the tooltip to `%inherit`.
+
 If you want a specific element to use a modified style, you can add a `data-tt_style` attribute.
 ```html
 <p data-tt='his text should be red' data-tt_style="color: #f00">this text has a tooltip with colored text</p>
