@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>tooltip test</title>
+        <script src="./tooltip.js"></script>
+        <style>
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+
+            div span {
+                color: #000;
+            }
+
+            #tooltip-div {
+                background-color: #33333399;
+                pointer-events: none;
+                
+                height: 3em;
+                width: 10em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="#" data-tt="link tooltip!">this link has a tooltip</a>
+        <br><br>
+        <span style="background-color: #444">the div below has a tooltip</span>
+        <br><br>
+        <div style="width: 15vw; background-color: #aaa" data-tt="div tooltip!">
+            <span data-tt="span tooltip!" style="background-color: #ccc">this span has its own tooltip</span>
+            <br><br>
+            <span data-tt="%inherit" style="background-color: #ccc">but this one inherits the divs tooltip</span>
+            <br><br>
+            <span style="background-color: #ddd">and this one has no tooltip</span>
+            <br><br>
+            and this text isnt a span!
+        </div>
+        <br>
+        <span data-tt="span tooltip!" style="background-color: #444">this span also has a tooltip!</span>
+        <br><br>
+        this checkbox has a dynamic tooltip: <input type='checkbox' data-tt="this checkbox is D{el.checked ? 'checked' : 'not checked'}">
+        <br><br>
+        this input also has a dynamic tooltip: <input type='number' data-tt="value is D{el.value > 50 ? 'more than 50' : 'not more than 50'}">
+        <br><br>
+        <div data-tt='this is the div tooltip' style='background-color: #ccc; width: 12em; color: #000'>
+            this does something cool<br>
+            <input type='checkbox' data-tt="D{el.checked ? 'this is the parent divs tooltip\: ' + el.parent.data.tt : 'if you check this something cool happens'}">
+        </div>
+        <br>
+        <span data-tt='hi!' data-tt_style="color: #f00">this text's tooltip should be red</span>
+        <br><br>
+        this checkbox's style is dynamic: <input type='checkbox' data-tt='checkbox moment' data-tt_format_style='true' data-tt_style="color: D{el.checked ? '#0f0' : '#f00'}">
+        <br><br>
+        <span data-tt="this spans color is: D{el.style.color}" style="color: #0f0">this texts tooltip will show a property of this span</span>
+    </body>
+</html>
