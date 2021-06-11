@@ -81,3 +81,11 @@ Currently supports accessing the following properties of an element:
 - `parent` - accesses `element.parentElement`
 - `checked`
 - `value`
+
+## Tooltip
+static tooltip class that handles the actual tooltip display
+- `formatTooltipText(str, element)` - formats a tooltip string using the given element
+- `getTooltipText(element)` - gets the tooltip text that should be displayed for the given element
+- `getTooltipStyle(element)` - gets the tooltip style that should be used for a given element
+- `moveTooltip(x, y)` - moves the tooltip to the given cursor position, and offsets it accordingly so it does not go offscreen if possible
+- `applyTooltipStyle(str)` - sets the tooltip's style to the given style string (usually taken from `getTooltipStyle()`
